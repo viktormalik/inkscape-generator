@@ -2,8 +2,12 @@
 
 INPUT=$1
 OUTPUT=$2
+
 OBJ=${INPUT%.svg}
-OBJ_CNT=$3
+OBJ_CNT=$(inkscape --actions "select-all;select-list" $INPUT 2>/dev/null | \
+          grep ^$OBJ-[0-9] | \
+          cut -d' ' -f1 | cut -d'-' -f2 | \
+          sort -n | tail -n 1)
 
 ROWS=5
 COLS=4
