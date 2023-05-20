@@ -17,7 +17,7 @@ for r in $(seq $ROWS); do
     ids=$(seq $OBJ_CNT)
     for c in $(seq $COLS); do
         id=$(shuf -e -n 1 $ids)
-        ids=${ids//$id/}
+        ids=${ids/$id/}
         ACTIONS+="select-by-id:$OBJ-$id;"
         ACTIONS+="clone;"
         ACTIONS+="select-by-id:$OBJ-anchor-$r-$c;"
