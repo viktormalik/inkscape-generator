@@ -1,5 +1,10 @@
 #! /bin/bash
 
+if [[ $1 = "--help" || $1 = "-h" ]]; then
+    echo "Usage: inkgen INPUT.svg OUTPUT.pdf"
+    exit
+fi
+
 input=$1
 output=$2
 
